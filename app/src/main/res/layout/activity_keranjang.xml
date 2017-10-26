@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jemmycalak.thisismymarket.view.Pengiriman"
-    android:orientation="vertical">
+    tools:context="com.example.jemmycalak.thisismymarket.view.Keranjang">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbarpeng"
+            android:id="@+id/toolbarO"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"/>
@@ -21,11 +19,10 @@
     </android.support.design.widget.AppBarLayout>
 
     <include
-        layout="@layout/pengiriman_listview" />
-
+        layout="@layout/keranjang_listview" />
     <Button
-        android:id="@+id/next"
-        android:text="Proses Pembayaran"
+        android:id="@+id/checkout"
+        android:text="Proses Checkout"
         android:textColor="#ffffff"
         android:textStyle="bold"
         android:background="@color/colorPrimaryDark"
