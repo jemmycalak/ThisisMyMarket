@@ -3,10 +3,11 @@ package com.example.jemmycalak.thisismymarket.SessionManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.Snackbar;
 import android.widget.Toast;
 
 import com.example.jemmycalak.thisismymarket.MainActivity;
-import com.example.jemmycalak.thisismymarket.view.login;
+import com.example.jemmycalak.thisismymarket.view.Login;
 
 import java.util.HashMap;
 
@@ -16,9 +17,10 @@ import java.util.HashMap;
 
 public class userSharedPreference {
 
-    SharedPreferences sPref;
-    SharedPreferences.Editor editor;
-    Context c;
+    private SharedPreferences sPref;
+    private SharedPreferences.Editor editor;
+    private Context c;
+    private Snackbar snackbar;
 
     //sharedpreferences mode
     int PRIVATE_MODE=0;
@@ -40,6 +42,7 @@ public class userSharedPreference {
 
     public static final String KEY_NOPE = "nope";
     public static final String KEY_JK = "jk";
+    public static final String KEY_TOKEN = "token";
 
     //constructor
     public userSharedPreference(Context c) {
@@ -48,10 +51,11 @@ public class userSharedPreference {
         editor = sPref.edit();
     }
 
-    //create login session
-    public void createUserLoginSession(String id, String name, String email, String nope, String jk){
-        //storing login value as TRUE
+    //create Login session
+    public void createUserLoginSession(String id, String name, String email, String nope, String jk, String token){
+        //storing Login asd as TRUE
         editor.putBoolean(IS_USER_LOGIN, true);
+        editor.putString(KEY_TOKEN, token);
 
         editor.putString(KEY_ID, id);
 
@@ -68,32 +72,30 @@ public class userSharedPreference {
     }
 
     /*
-    * check login method will check user login status
-    * if false it will redirect  user to login page
+    * check Login method will check user Login status
+    * if false it will redirect  user to Login page
     * else do anything
     */
-    // Check for login
+    // Check for Login
     public boolean isUserLoggedIn(){
         return sPref.getBoolean(IS_USER_LOGIN, false);
     }
 
     public boolean checkLogin(){
-        //check login status
+        //check Login status
         if(!this.isUserLoggedIn()){
-
-            Toast.makeText(c, "Oops, anda belum login.", Toast.LENGTH_LONG).show();
-            //user is not logged in redirect him to login activity
-            Intent i= new Intent(c, login.class);
-
-            //closing all the activity from stack
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
-            //add new flag to start new activity
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-            //start login activity
-            c.startActivity(i);
+//            //user is not logged in redirect him to Login activity
+//            Intent i= new Intent(c, Login.class);
+//
+//            //closing all the activity from stack
+//            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//
+//            //add new flag to start new activity
+//            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//
+//            //start Login activity
+//            c.startActivity(i);
             return true;
         }
         return false;
@@ -110,6 +112,7 @@ public class userSharedPreference {
 
         //user name
         user.put(KEY_ID, sPref.getString(KEY_ID, null));
+        user.put(KEY_TOKEN, sPref.getString(KEY_TOKEN, null));
 
         //user name
         user.put(KEY_NAME, sPref.getString(KEY_NAME, null));
@@ -133,18 +136,18 @@ public class userSharedPreference {
 
 
 
-        //after logout redirect user to login activity
+        //after logout redirect user to Login activity
         Intent i= new Intent(c, MainActivity.class);
 
         //closing all activity
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
         //add new flag to start activity
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
         c.startActivity(i);
 
     }
+
 
 }

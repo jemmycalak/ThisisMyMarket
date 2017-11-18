@@ -39,8 +39,7 @@ public class BlankFragment2 extends Fragment {
 
     /*
     public void setToolbar(){
-        ///panggil toolbar dar layout/tool_bar.xml
-        toolbar=(Toolbar)findViewById(R.id.toolbardetail);
+        ///panggil toolbar dar layout/body.xml     toolbar=(Toolbar)findViewById(R.id.toolbardetail);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
