@@ -1,1 +1,0 @@
-package com.example.jemmycalak.thisismymarket.interfacesComunicator;  public class Comunicator { }
