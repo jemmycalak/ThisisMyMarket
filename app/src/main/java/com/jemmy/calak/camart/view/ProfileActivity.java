@@ -1,19 +1,18 @@
-package com.example.jemmycalak.thisismymarket.view;
+package com.jemmy.calak.camart.view;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.example.jemmycalak.thisismymarket.R;
-import com.example.jemmycalak.thisismymarket.util.API;
-import com.example.jemmycalak.thisismymarket.util.userSharedPreference;
+import com.jemmy.calak.camart.R;
+import com.jemmy.calak.camart.util.API;
+import com.jemmy.calak.camart.util.userSharedPreference;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.HashMap;

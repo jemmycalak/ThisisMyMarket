@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.interfacesComunicator;
+package com.jemmy.calak.camart.interfacesComunicator;
 
 
 public interface Comunicator {

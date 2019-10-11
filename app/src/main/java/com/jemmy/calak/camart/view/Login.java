@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.view;
+package com.jemmy.calak.camart.view;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -20,31 +20,21 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.example.jemmycalak.thisismymarket.Config;
-import com.example.jemmycalak.thisismymarket.Model.object_user;
-import com.example.jemmycalak.thisismymarket.R;
-import com.example.jemmycalak.thisismymarket.util.userSharedPreference;
-import com.example.jemmycalak.thisismymarket.util.VolleySingleton;
-import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInApi;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
+import com.jemmy.calak.camart.Config;
+import com.jemmy.calak.camart.Model.object_user;
+import com.jemmy.calak.camart.R;
+import com.jemmy.calak.camart.util.userSharedPreference;
+import com.jemmy.calak.camart.util.VolleySingleton;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.json.JSONArray;
@@ -54,16 +44,13 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Login extends AppCompatActivity implements View.OnClickListener{
+public class Login extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener{
 
     private SignInButton signInButton;
     private GoogleSignInClient googleSignInClient;
     private GoogleSignInOptions googleSignInOptions;
     private GoogleApiClient googleApiClient;
-    private static final int RC_SIGN_IN = 100;
-    private Uri photoUri;
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
+    private static final int RC_SIGN_IN = 007;
 
     private String namaG, emailG, imageG, token_firebase;
 
@@ -113,6 +100,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         dftr = (Button) findViewById(R.id.dftr);
         login.setOnClickListener(this);
         dftr.setOnClickListener(this);
+
+        //google signin
+        googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .requestIdToken(getString(R.string.ID_CLIENT_WEB))
+                .build();
+        googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
     }
 
     private void setolbar() {
@@ -125,12 +119,52 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         switch (v.getId()) {
             case R.id.login:
                 loggginManual();
+//                googleSignIn();
                 break;
             case R.id.dftr:
                 startActivity(new Intent(Login.this, Register.class));
                 break;
         }
 
+    }
+
+    public void googleSignIn(){
+        Intent signInIntent = googleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    private void getData(Task<GoogleSignInAccount> result) {
+        try{
+            GoogleSignInAccount account = result.getResult(ApiException.class);
+
+            Log.d(TAG, "name=====>" + account.getDisplayName());
+            Log.d(TAG, "emai=====>" + account.getEmail());
+            Log.d(TAG, "id=====>" + account.getId());
+            Log.d(TAG, "TOKEN login=====>"+account.getIdToken());
+//            Toast.makeText(LoginActivity.this, "Email : "+account.getEmail()+" , Token : "+account.getIdToken(), Toast.LENGTH_LONG).show();
+
+            String tokenSosmed = account.getIdToken().toString();
+            String iduserSosmed = account.getId();
+            String emailSosmed = account.getEmail();
+
+
+        }catch (ApiException e){
+            Log.d(TAG, "=====> failed google login");
+            Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
+            notif("Silahakan login manual", 0);
+        }
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == RC_SIGN_IN){
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            getData(task);
+        }
+//        Log.d("Data", String.valueOf(data));
     }
 
     private void loggginManual() {
@@ -244,7 +278,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
     }
 
-
     private void starLoading() {
         if (mProgressDialog == null) {
             mProgressDialog.setMessage("Please wait..");
@@ -258,5 +291,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         if (mProgressDialog != null && mProgressDialog.isShowing()) {
             mProgressDialog.hide();
         }
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        Log.d("Error","===>"+connectionResult.getErrorMessage());
     }
 }

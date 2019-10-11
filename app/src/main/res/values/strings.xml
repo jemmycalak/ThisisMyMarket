@@ -1,10 +1,21 @@
 <resources>
-    <string name="app_name">Calak Market</string>
+    <string name="app_name">CAMART</string>
     //untuk drawer
     <string name="opendrawer">Open</string>
     <string name="closedrawer">Close</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--SearchView-->
+    <string name="search_hint">Cari produk..</string>
+    <string name="dengan_nominal">Dengan nominal</string>
+    <string name="a_n">A/N</string>
+    <string name="no_rekening">No.Rekening</string>
+    <string name="silahkan_transfer_ke">Silahkan Transfer ke :</string>
+    <string name="pesanan_anda_dalam_proses_verifikasi_pembayaran">Pesanan anda dalam proses Verifikasi pembayaran</string>
+    <string name="terima_kasih_telah_berbelanja_di_camart">Terima kasih telah berbelanja di CAMART</string>
+    <string name="ID_CLIENT_WEB">712387991111-lovkv4vubfprittiqqs5hodafgu6e4t5.apps.googleusercontent.com</string>
+    <string name="title_activity_upload_bukti_pembayaran">UploadBuktiPembayaran</string>
 
 </resources>

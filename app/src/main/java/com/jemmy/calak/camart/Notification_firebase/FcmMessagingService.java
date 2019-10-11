@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.Notification_firebase;
+package com.jemmy.calak.camart.Notification_firebase;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -8,8 +8,8 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
-import com.example.jemmycalak.thisismymarket.MainActivity;
-import com.example.jemmycalak.thisismymarket.R;
+import com.jemmy.calak.camart.MainActivity;
+import com.jemmy.calak.camart.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 

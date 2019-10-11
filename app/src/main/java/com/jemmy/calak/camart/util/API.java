@@ -1,22 +1,25 @@
-package com.example.jemmycalak.thisismymarket.util;
+package com.jemmy.calak.camart.util;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.util.Log;
-import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.example.jemmycalak.thisismymarket.Config;
-import com.example.jemmycalak.thisismymarket.Model.object_product;
-import com.example.jemmycalak.thisismymarket.view.ConfirmasiDetailPesanan;
-import com.example.jemmycalak.thisismymarket.view.DaftarPesanan;
-import com.example.jemmycalak.thisismymarket.view.Input_alamat;
-import com.example.jemmycalak.thisismymarket.view.ProfileActivity;
+import com.jemmy.calak.camart.Config;
+import com.jemmy.calak.camart.Model.object_product;
+import com.jemmy.calak.camart.view.ConfirmasiDetailPesanan;
+import com.jemmy.calak.camart.view.DaftarPesanan;
+import com.jemmy.calak.camart.view.Input_alamat;
+import com.jemmy.calak.camart.view.ProfileActivity;
+import com.jemmy.calak.camart.view.UploadBuktiPembayaran;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,6 +37,7 @@ public class API {
 
     private final static String url_api = Config.app_url_api;
     ProgressDialog progressDialog;
+    AlertDialog.Builder builder, builder1, builder2;
 
     public void startLoad(final Context context, String pesan) {
         if (progressDialog == null) {
@@ -255,5 +259,89 @@ public class API {
         });
 
         VolleySingleton.getmInstance(activity).addToRequestque(jsonObjectRequest);
+    }
+
+    public void uploadBuktiPembayaran(String id_user, String id_order, String imageString, final Activity activity) {
+        startLoad(activity, "Please wait..");
+        String url = Config.app_url_api+"uploadBuktiPembayaran";
+        Log.d("image","==>"+imageString);
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("id_user", id_user);
+            jsonObject.put("id_order", id_order);
+            jsonObject.put("image", imageString);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d("respons","upload===>"+response);
+
+                try {
+                    JSONObject jsonObject1 = new JSONObject(String.valueOf(response));
+                    String code = jsonObject1.getString("status");
+                    if(code.equals("true")){
+                        notif(activity, jsonObject1.getString("msg").toUpperCase(), 0);
+                    }else{
+                        notif(activity, jsonObject1.getString("msg").toUpperCase(), 0);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+                stopLoad(activity);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                stopLoad(activity);
+                notif(activity, "Please check your connection.", 0);
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                return super.getHeaders();
+            }
+        };
+        VolleySingleton.getmInstance(activity).addToRequestque(jsonObjectRequest);
+
+    }
+
+    public void notif(Context context, String pesan, int code){
+        builder = new AlertDialog.Builder(context);
+        builder1 = new AlertDialog.Builder(context);
+        builder2 = new AlertDialog.Builder(context);
+        switch (code){
+            case 0:
+                builder.setMessage(pesan);
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+                break;
+            case 1:
+                builder1.setMessage(pesan);
+                builder1.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                builder1.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                AlertDialog alertDialog1 = builder1.create();
+                alertDialog1.show();
+                break;
+            case 2:
+
+                break;
+        }
+
     }
 }

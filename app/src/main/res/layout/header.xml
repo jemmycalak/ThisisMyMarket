@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_home"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:background="#0091EA"
-    android:padding="20dp">
-
+    android:layout_height="160dp"
+    android:background="@color/colorPrimary">
     <ImageView
-        android:id="@+id/h_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:src="@drawable/home"
+        android:layout_height="match_parent" />
     <TextView
         android:id="@+id/h_nama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/h_img"/>
-    <TextView
-        android:id="@+id/h_email"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textSize="@dimen/textSizeProfilee"
+        android:layout_above="@+id/lay_email"/>
+
+    <LinearLayout
+        android:id="@+id/lay_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/h_nama"/>
+        android:orientation="vertical"
+        android:layout_margin="3dp"
+        android:paddingLeft="30dp"
+        android:layout_alignParentBottom="true">
 
+        <TextView
+            android:id="@+id/h_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSizeEmail"/>
+
+        <!--<TextView-->
+            <!--android:id="@+id/point"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="point : "-->
+            <!--android:textSize="@dimen/textSizeEmail"/>-->
+    </LinearLayout>
 </RelativeLayout>

@@ -1,14 +1,12 @@
-package com.example.jemmycalak.thisismymarket.view;
+package com.jemmy.calak.camart.view;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 
-import com.example.jemmycalak.thisismymarket.MainActivity;
-import com.example.jemmycalak.thisismymarket.R;
-
-import java.util.Timer;
+import com.jemmy.calak.camart.MainActivity;
+import com.jemmy.calak.camart.R;
 
 public class splash extends AppCompatActivity {
 

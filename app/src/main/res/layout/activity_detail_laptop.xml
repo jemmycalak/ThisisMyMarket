@@ -1,57 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:id="@+id/coorDetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbardetail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary">
-
-        </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/detail_laptop_item" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end">
+        android:orientation="vertical">
+        <include layout="@layout/activity_detail_laptop_item" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
         <android.support.percent.PercentRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="#fddd2f">
+            android:background="#fddd2f"
+            android:orientation="horizontal">
+
             <Button
                 android:id="@+id/addcart"
-                app:layout_widthPercent="8%"
-                app:layout_heightPercent="8%"
-                android:background="@drawable/addtocart"
+                android:layout_height="match_parent"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:layout_toLeftOf="@+id/order"
                 android:layout_toStartOf="@+id/order"
-                android:layout_alignParentTop="true"
-                android:layout_height="match_parent" />
+                android:background="@drawable/addtocart"
+                app:layout_heightPercent="8%"
+                app:layout_widthPercent="8%" />
+
             <Button
                 android:id="@+id/order"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@color/colorPrimaryDark"
                 android:text="Order Now"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:background="@color/colorPrimaryDark"
-                app:layout_widthPercent="70%"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"/>
+                app:layout_heightPercent="8%"
+                app:layout_widthPercent="70%" />
         </android.support.percent.PercentRelativeLayout>
 
     </LinearLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

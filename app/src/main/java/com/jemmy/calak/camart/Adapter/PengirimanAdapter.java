@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.Adapter;
+package com.jemmy.calak.camart.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,9 +9,9 @@ import android.widget.BaseAdapter;
 
 import android.widget.CheckBox;
 
-import com.example.jemmycalak.thisismymarket.Model.object_address;
-import com.example.jemmycalak.thisismymarket.R;
-import com.example.jemmycalak.thisismymarket.view.Pengiriman;
+import com.jemmy.calak.camart.Model.object_address;
+import com.jemmy.calak.camart.R;
+import com.jemmy.calak.camart.view.Pengiriman;
 
 import java.util.ArrayList;
 

@@ -4,5 +4,4 @@
         android:title="Laptop" />
     <item android:id="@+id/desktop"
         android:title="Komputer Desktop"/>
-
 </menu>

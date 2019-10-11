@@ -4,8 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:showIn="@layout/detail_laptop"
+    android:layout_height="wrap_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
@@ -40,22 +39,42 @@
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="italic"
+                android:textStyle="italic|bold"
+                android:textSize="18dp"
                 android:padding="3dp"
-                android:textAppearance="?android:textAppearanceMedium"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/img2"/>
+
+            <TextView
+                android:id="@+id/t4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:padding="3dp"
+                android:text="Harga "
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/title"/>
+            <TextView
+                android:id="@+id/hrg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:textStyle="bold"
+                android:layout_below="@+id/title"
+                android:layout_toRightOf="@+id/t2"
+                />
             <TextView
                 android:id="@+id/t2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:padding="3dp"
-                android:textAppearance="?android:textAppearanceSmall"
+                android:text="Description "
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/title"/>
+                android:layout_below="@+id/hrg"/>
             <TextView
                 android:id="@+id/descript"
                 android:layout_width="wrap_content"
@@ -63,27 +82,8 @@
                 android:textStyle="normal"
                 android:padding="3dp"
                 android:textAppearance="?android:textAppearanceSmall"
-                android:layout_below="@id/title"
+                android:layout_below="@id/hrg"
                 android:layout_toRightOf="@+id/t2"
-                />
-            <TextView
-                android:id="@+id/t4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:padding="3dp"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/descript"/>
-            <TextView
-                android:id="@+id/hrg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="3dp"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:layout_below="@+id/descript"
-                android:layout_toRightOf="@+id/t4"
                 />
             <TextView
                 android:id="@+id/t5"
@@ -91,8 +91,8 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:padding="3dp"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:layout_below="@+id/t4"
+                android:text="Warna "
+                android:layout_below="@+id/descript"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
             <TextView
@@ -100,9 +100,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="3dp"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:layout_below="@+id/hrg"
-                android:layout_toRightOf="@+id/t5"
+                android:layout_below="@+id/descript"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/t2"
                 />
             <TextView
                 android:id="@+id/t6"
@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:padding="3dp"
-                android:textAppearance="?android:textAppearanceSmall"
+                android:text="Berat "
                 android:layout_below="@+id/t5"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
@@ -119,15 +119,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="3dp"
-                android:textAppearance="?android:textAppearanceSmall"
                 android:layout_below="@+id/color"
-                android:layout_toRightOf="@+id/t6"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/t2"
+                />
+            <TextView
+                android:id="@+id/t7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:padding="3dp"
+                android:text="Stock "
+                android:layout_below="@+id/t6"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+            <TextView
+                android:id="@+id/stock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:layout_below="@+id/berat"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/t2"
                 />
 
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/berat"
+                android:layout_below="@+id/stock"
                 android:layout_alignParentLeft="true"
                 android:elevation="3dp"
                 android:layout_marginTop="20dp"

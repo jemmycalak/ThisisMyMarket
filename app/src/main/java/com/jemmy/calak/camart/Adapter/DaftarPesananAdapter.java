@@ -27,7 +27,7 @@ import java.util.ArrayList;
  * Created by Jemmy Calak on 9/28/2017.
  */
 
-public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyHolder> {
+public class DaftarPesananAdapter extends RecyclerView.Adapter<DaftarPesananAdapter.MyHolder> {
 
     private Context c;
     private ArrayList<object_order> orderArray;
@@ -38,7 +38,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyHolder> {
     private String id_user;
 
 
-    public OrderAdapter(Context c, Activity activity, ArrayList<object_order> arraysectionOrder, String id_user){
+    public DaftarPesananAdapter(Context c, Activity activity, ArrayList<object_order> arraysectionOrder, String id_user){
         this.id_user = id_user;
         this.c = c;
         this.activity = activity;
@@ -48,14 +48,14 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyHolder> {
     }
 
     @Override
-    public OrderAdapter.MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DaftarPesananAdapter.MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_pesanan_item, parent, false);
 
         return new MyHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final OrderAdapter.MyHolder holder, final int position) {
+    public void onBindViewHolder(final DaftarPesananAdapter.MyHolder holder, final int position) {
 
         //        get data from object
         object_order or = orderArray.get(position);
@@ -64,7 +64,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyHolder> {
         ArrayList dataProduct = or.getArraysectionProduct();
 
 //        kirim data ke adapter produt
-        OrderProductAdapter product = new OrderProductAdapter(c, dataProduct);
+        DaftarPesananProductAdapter product = new DaftarPesananProductAdapter(c, dataProduct);
         holder.recyclerView.setHasFixedSize(true);
         holder.recyclerView.setLayoutManager(new LinearLayoutManager(c, LinearLayoutManager.VERTICAL, false));
         holder.recyclerView.setAdapter(product);

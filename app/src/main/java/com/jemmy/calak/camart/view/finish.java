@@ -1,7 +1,6 @@
-package com.example.jemmycalak.thisismymarket.view;
+package com.jemmy.calak.camart.view;
 
 import android.content.Intent;
-import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,9 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.jemmycalak.thisismymarket.MainActivity;
-import com.example.jemmycalak.thisismymarket.R;
-import com.example.jemmycalak.thisismymarket.util.formatNominal;
+import com.jemmy.calak.camart.MainActivity;
+import com.jemmy.calak.camart.R;
+import com.jemmy.calak.camart.util.formatNominal;
 
 public class finish extends AppCompatActivity {
 

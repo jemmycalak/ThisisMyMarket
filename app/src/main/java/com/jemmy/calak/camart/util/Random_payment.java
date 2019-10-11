@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.util;
+package com.jemmy.calak.camart.util;
 
 import java.util.Random;
 

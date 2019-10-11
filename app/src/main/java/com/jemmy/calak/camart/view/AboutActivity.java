@@ -1,9 +1,9 @@
-package com.example.jemmycalak.thisismymarket.view;
+package com.jemmy.calak.camart.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.jemmycalak.thisismymarket.R;
+import com.jemmy.calak.camart.R;
 
 public class AboutActivity extends AppCompatActivity {
 

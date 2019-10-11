@@ -1,57 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
-    tools:showIn="@layout/activiry_bank"
-    >
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp">
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:orientation="horizontal"
+            android:padding="2dp"
+            android:background="@color/whiteColor">
 
-            <LinearLayout
-                android:id="@+id/card1"
+            <ImageView
+                android:id="@+id/img_bank"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/bni"/>
+
+            <CheckBox
+                android:id="@+id/checkBox_bank"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/title"
-                android:orientation="vertical"
-                android:paddingLeft="10dp"
-                android:paddingBottom="5dp"
-                android:paddingTop="5dp">
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/bni"
-                            android:layout_marginTop="5dp"
-
-                            android:layout_marginLeft="10dp"/>
-                        <CheckBox
-                            android:id="@+id/checkBox"
-                            android:text="Bank BNI (Manual Checking)"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginTop="5dp"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:button="@null"
-                            android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
-                            />
-                    </LinearLayout>
-
-            </LinearLayout>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-</LinearLayout>
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:button="@null"
+                android:textColor="@color/blackColor"
+                android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                android:text="Bank BNI (Manual Checking)"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+</android.support.v7.widget.CardView>

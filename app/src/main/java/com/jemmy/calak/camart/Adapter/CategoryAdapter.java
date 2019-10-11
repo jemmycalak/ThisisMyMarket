@@ -1,20 +1,16 @@
-package com.example.jemmycalak.thisismymarket.Adapter;
+package com.jemmy.calak.camart.Adapter;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.example.jemmycalak.thisismymarket.Model.object_product;
-import com.example.jemmycalak.thisismymarket.R;
-import com.example.jemmycalak.thisismymarket.fragment.FragmentCategory;
-import com.example.jemmycalak.thisismymarket.interfacesComunicator.Comunicator;
+import com.jemmy.calak.camart.Model.object_product;
+import com.jemmy.calak.camart.R;
+import com.jemmy.calak.camart.fragment.FragmentCategory;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

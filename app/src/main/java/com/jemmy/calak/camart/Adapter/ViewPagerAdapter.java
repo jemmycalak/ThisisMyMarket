@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.Adapter;
+package com.jemmy.calak.camart.Adapter;
 
 import android.app.Activity;
 import android.support.v4.app.Fragment;
@@ -7,11 +7,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
-import com.example.jemmycalak.thisismymarket.MainActivity;
-import com.example.jemmycalak.thisismymarket.fragment.FragmentCategory;
-import com.example.jemmycalak.thisismymarket.fragment.FragmentProduct;
-
-import java.lang.ref.WeakReference;
+import com.jemmy.calak.camart.fragment.FragmentCategory;
+import com.jemmy.calak.camart.fragment.FragmentProduct;
 
 /**
  * Created by Jemmy Calak on 5/25/2017.
@@ -65,6 +62,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         //registration fragment
+        //untuk mengakses fragment lain harus di daftarkan disini dahulu
         Fragment fragment = (Fragment)super.instantiateItem(container, position);
         registeredFragments.put(position, fragment);
 

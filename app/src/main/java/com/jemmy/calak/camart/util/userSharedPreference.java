@@ -1,13 +1,11 @@
-package com.example.jemmycalak.thisismymarket.util;
+package com.jemmy.calak.camart.util;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.design.widget.Snackbar;
-import android.widget.Toast;
 
-import com.example.jemmycalak.thisismymarket.MainActivity;
-import com.example.jemmycalak.thisismymarket.view.Login;
+import com.jemmy.calak.camart.MainActivity;
 
 import java.util.HashMap;
 
@@ -86,18 +84,6 @@ public class userSharedPreference {
     public boolean checkLogin(){
         //check Login status
         if(!this.isUserLoggedIn()){
-//            //user is not logged in redirect him to Login activity
-//            Intent i= new Intent(c, Login.class);
-//
-//            //closing all the activity from stack
-//            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//
-//            //add new flag to start new activity
-//            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//
-//            //start Login activity
-//            c.startActivity(i);
             return true;
         }
         return false;
@@ -148,7 +134,7 @@ public class userSharedPreference {
 //        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
         //add new flag to start activity
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         c.startActivity(i);
 
     }

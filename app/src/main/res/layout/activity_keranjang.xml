@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<RelativeLayout
+    android:id="@+id/coordinator_keranjang"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jemmycalak.thisismymarket.view.Keranjang">
+    tools:context="com.jemmy.calak.camart.view.Keranjang">
 
-    <android.support.design.widget.AppBarLayout
+    <ListView
+        android:id="@+id/lv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/text_total"
+        >
+    </ListView>
+    <TextView
+        android:id="@+id/text_total"
+        android:layout_width="match_parent"
+        android:background="#eeee"
+        android:text="Total :"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkout">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbarO"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"/>
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include
-        layout="@layout/keranjang_listview" />
+    </TextView>
     <Button
         android:id="@+id/checkout"
         android:text="Proses Checkout"
@@ -28,6 +32,6 @@
         android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"/>
+        android:layout_alignParentBottom="true"/>
 
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

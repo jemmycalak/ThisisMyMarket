@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.view;
+package com.jemmy.calak.camart.view;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,14 +13,14 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.jemmycalak.thisismymarket.Adapter.KeranjangAdapter;
+import com.jemmy.calak.camart.Adapter.KeranjangAdapter;
 
-import com.example.jemmycalak.thisismymarket.Config;
-import com.example.jemmycalak.thisismymarket.Model.object_product;
-import com.example.jemmycalak.thisismymarket.R;
-import com.example.jemmycalak.thisismymarket.util.formatNominal;
-import com.example.jemmycalak.thisismymarket.util.userSharedPreference;
-import com.example.jemmycalak.thisismymarket.util.SQLite;
+import com.jemmy.calak.camart.Config;
+import com.jemmy.calak.camart.Model.object_product;
+import com.jemmy.calak.camart.R;
+import com.jemmy.calak.camart.util.formatNominal;
+import com.jemmy.calak.camart.util.userSharedPreference;
+import com.jemmy.calak.camart.util.SQLite;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -126,17 +125,17 @@ public class Keranjang extends AppCompatActivity {
             }else{
                 snackbar();
                 setVisibleCheckout();
-                setTotal(0);
+                setVisibleTotal(0);
             }
             //set total
-            setTotal(total_keranjang);
+            setVisibleTotal(total_keranjang);
 
         }catch(Exception e){
             Log.d("Error get data.","");
         }
     }
 
-    public void setTotal(int total_keranjang) {
+    public void setVisibleTotal(int total_keranjang) {
         if(total_keranjang == 0 ){
             textTotal.setVisibility(View.INVISIBLE);
         }else {

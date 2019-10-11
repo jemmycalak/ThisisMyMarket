@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.Adapter;
+package com.jemmy.calak.camart.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,17 +13,13 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.jemmycalak.thisismymarket.R;
-import com.example.jemmycalak.thisismymarket.Model.object_product;
-import com.example.jemmycalak.thisismymarket.util.formatNominal;
-import com.example.jemmycalak.thisismymarket.view.DetailProduct;
+import com.jemmy.calak.camart.R;
+import com.jemmy.calak.camart.Model.object_product;
+import com.jemmy.calak.camart.util.formatNominal;
+import com.jemmy.calak.camart.view.DetailProduct;
 import com.squareup.picasso.Picasso;
 
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Locale;
 
 /**
  * Created by Jemmy Calak on 5/16/2017.

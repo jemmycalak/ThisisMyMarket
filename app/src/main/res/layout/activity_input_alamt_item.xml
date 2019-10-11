@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:showIn="@layout/input_alamt"
+    tools:showIn="@layout/activity_input_alamt"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:padding="5dp"
     >
@@ -39,6 +39,8 @@
                     android:layout_marginLeft="5dp"/>
                 <EditText
                     android:id="@+id/namapenerima_detail"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Taylor Swift"/>
@@ -49,6 +51,8 @@
                     android:layout_marginLeft="5dp"/>
                 <EditText
                     android:id="@+id/almt_detail"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Jl. Batu No.1, Jakarta"/>
@@ -59,6 +63,8 @@
                     android:layout_marginLeft="5dp"/>
                 <EditText
                     android:id="@+id/provinsi"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Jakarta"/>
@@ -71,6 +77,7 @@
                     android:id="@+id/notelp_detail"
                     android:inputType="number"
                     android:maxLength="12"
+                    android:imeOptions="actionDone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"

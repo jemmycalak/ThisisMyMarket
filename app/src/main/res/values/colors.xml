@@ -3,4 +3,8 @@
     <color name="colorPrimary">#ce2127</color>
     <color name="colorPrimaryDark">#b71c1c</color>
     <color name="colorAccent">#c0bbbc</color>
+    <color name="blackColor">#000</color>
+    <color name="whiteColor">#ffff</color>
+    <color name="tabSelectedColor">#FBE717</color>
+    <color name="transparant">#00ffffff</color>
 </resources>

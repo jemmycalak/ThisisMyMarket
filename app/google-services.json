@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "712387991111",
+    "firebase_url": "https://camart-8f80c.firebaseio.com",
+    "project_id": "camart-8f80c",
+    "storage_bucket": "camart-8f80c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712387991111:android:6ba466d85d08a48c",
+        "android_client_info": {
+          "package_name": "com.jemmy.calak.camart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712387991111-hqq7t0krqsqi8as93eonip452jecq371.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jemmy.calak.camart",
+            "certificate_hash": "21d4d345e3446586d71b3c6e84a82952369929a9"
+          }
+        },
+        {
+          "client_id": "712387991111-lovkv4vubfprittiqqs5hodafgu6e4t5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCon8AaPcn6oO2WybpZZzqnb4T4lNr1O7s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712387991111-lovkv4vubfprittiqqs5hodafgu6e4t5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

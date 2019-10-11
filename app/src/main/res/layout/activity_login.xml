@@ -5,27 +5,17 @@
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jemmycalak.thisismymarket.view.login">
+    tools:context="com.jemmy.calak.camart.view.Login">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <android.support.design.widget.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/tolbarLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"/>
-        </android.support.design.widget.AppBarLayout>
 
         <android.support.v7.widget.CardView
             android:id="@+id/cad1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="95dp">
+            android:layout_height="wrap_content">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -38,9 +28,11 @@
                         android:layout_marginTop="15dp">
                         <EditText
                             android:id="@+id/user1"
-                            android:hint="USERNAME"
+                            android:hint="EMAIL"
+                            android:imeOptions="actionNext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:inputType="text"
                             />
                     </android.support.design.widget.TextInputLayout>
 
@@ -53,6 +45,7 @@
                             android:id="@+id/pasword1"
                             android:hint="PASSWORD"
                             android:inputType="textPassword"
+                            android:imeOptions="actionDone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -75,31 +68,27 @@
                 </RelativeLayout>
         </android.support.v7.widget.CardView>
 
-        <TextView
-            android:id="@+id/atau"
-            android:text="ATAU"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:textSize="10sp"
-            android:layout_below="@id/cad1"
-            android:layout_marginTop="15dp"
-            android:textAppearance="?android:textAppearanceSmall"/>
+        <!--<TextView-->
+            <!--android:id="@+id/atau"-->
+            <!--android:text="ATAU"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:textSize="10sp"-->
+            <!--android:layout_below="@id/cad1"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:textAppearance="?android:textAppearanceSmall"/>-->
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/atau"
-            android:layout_marginTop="15dp">
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/signGoogle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </com.google.android.gms.common.SignInButton>
-            <TextView
-                android:id="@+id/tai"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </android.support.v7.widget.CardView>
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/atau"-->
+            <!--android:layout_marginTop="15dp">-->
+            <!--<com.google.android.gms.common.SignInButton-->
+                <!--android:id="@+id/signGoogle"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+            <!--</com.google.android.gms.common.SignInButton>-->
+        <!--</android.support.v7.widget.CardView>-->
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

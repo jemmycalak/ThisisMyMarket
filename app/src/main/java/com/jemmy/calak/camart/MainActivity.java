@@ -1,6 +1,5 @@
-package com.example.jemmycalak.thisismymarket;
+package com.jemmy.calak.camart;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -27,20 +26,19 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.jemmycalak.thisismymarket.Adapter.ViewPagerAdapter;
-import com.example.jemmycalak.thisismymarket.Model.object_product;
-import com.example.jemmycalak.thisismymarket.fragment.FragmentProduct;
-import com.example.jemmycalak.thisismymarket.interfacesComunicator.Comunicator;
-import com.example.jemmycalak.thisismymarket.util.userSharedPreference;
-import com.example.jemmycalak.thisismymarket.view.AboutActivity;
-import com.example.jemmycalak.thisismymarket.view.DaftarPesanan;
-import com.example.jemmycalak.thisismymarket.view.DetailProduct;
-import com.example.jemmycalak.thisismymarket.view.Keranjang;
-import com.example.jemmycalak.thisismymarket.view.Login;
-import com.example.jemmycalak.thisismymarket.view.ProfileActivity;
-import com.example.jemmycalak.thisismymarket.view.Register;
+import com.jemmy.calak.camart.Adapter.ViewPagerAdapter;
+import com.jemmy.calak.camart.Model.object_product;
+import com.jemmy.calak.camart.fragment.FragmentProduct;
+import com.jemmy.calak.camart.interfacesComunicator.Comunicator;
+import com.jemmy.calak.camart.util.userSharedPreference;
+import com.jemmy.calak.camart.view.AboutActivity;
+import com.jemmy.calak.camart.view.DaftarPesanan;
+import com.jemmy.calak.camart.view.DetailProduct;
+import com.jemmy.calak.camart.view.Keranjang;
+import com.jemmy.calak.camart.view.Login;
+import com.jemmy.calak.camart.view.ProfileActivity;
+import com.jemmy.calak.camart.view.Register;
 import com.quinny898.library.persistentsearch.SearchBox;
 import com.quinny898.library.persistentsearch.SearchResult;
 
@@ -232,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String token;
         HashMap<String, String> hashMap = session.getUserDetail();
         token = hashMap.get(userSharedPreference.KEY_TOKEN_FIREBASE);
-        Log.d("Token firebase", "=====>" + token);
+        Log.d("Token firebase", "sharefFref=====>" + token);
     }
 
     public void setFragment() {
@@ -244,11 +242,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentAdapter = new ViewPagerAdapter(this, getSupportFragmentManager());
         mViewPager.setAdapter(fragmentAdapter);
         tabLayout.setupWithViewPager(mViewPager);
-
-//        if(mViewPager.getCurrentItem() == 0){
-//            Fragment fragment = fragmentAdapter.getRegistrasionFragment(1);
-//            ((FragmentProduct)fragment).refreshProduct();
-//        }
 
     }
 
@@ -323,7 +316,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    //untuk memfungsikan tombol menu sebelah kanan atas
+    //untuk memfungsikan tombol toogle atas
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -351,12 +344,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_actionbar, menu);
 
-//        SearchManager searchManager =(SearchManager) getSystemService(Context.SEARCH_SERVICE);
-//        searchView =(SearchView)menu.findItem(R.id.search).getActionView();
-//        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-//        searchView.setIconifiedByDefault(false);
-//        setSearchView();
-
         return true;
     }
 
@@ -366,6 +353,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if (id == R.id.menu_login) {
             startActivity(new Intent(MainActivity.this, Login.class));
+//            startActivity(new Intent(MainActivity.this, DaftarPesanan.class));
         } else if (id == R.id.menu_register) {
             startActivity(new Intent(MainActivity.this, Register.class));
         } else if (id == R.id.menu_share) {

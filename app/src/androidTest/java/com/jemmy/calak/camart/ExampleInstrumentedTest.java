@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket;
+package com.jemmy.calak.camart;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

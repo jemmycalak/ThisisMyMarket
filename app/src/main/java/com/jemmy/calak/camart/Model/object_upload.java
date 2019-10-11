@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.Model;
+package com.jemmy.calak.camart.Model;
 
 /**
  * Created by Jemmy Calak on 12/15/2016.

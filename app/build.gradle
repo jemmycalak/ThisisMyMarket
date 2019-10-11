@@ -1,17 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "25.0.1"
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
-        applicationId "com.example.jemmycalak.thisismymarket"
+        applicationId "com.jemmy.calak.camart"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled = true  //this script for resolved gradle error
+//        multiDexEnabled = true  //this script for resolved gradle error
     }
     buildTypes {
         release {
@@ -22,35 +22,52 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:cardview-v7:23.4.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 
-    //drawer
-
-    //depedency for image loader mysql
-
-    //compile project picasso-2.5.2
-
-    //dependencies for login google
-    
-
-    //for percentage size
-    
-    
-    compile    'com.android.support:appcompat-v7:23.4.0'
-    compile    'com.android.support:support-v4:23.4.0'
-    compile    'com.android.support:design:23.4.0'
-    compile    'com.android.support:cardview-v7:23.4.0'
-    compile    'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.google.android.gms:play-services-auth:10.0.1'
-    compile 'com.mcxiaoke.volley:library:1.0.6@aar'
-    compile 'com.android.support:percent:23.4.0'
-    compile 'com.hrules:horizontalnumberpicker:1.1.1'
+//    compile 'com.google.android.gms:play-services:11.4.2'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.android.support:percent:26.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+//    circle Crop image
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+
+//    fast adapter for RecycleView
+    compile('com.mikepenz:fastadapter:2.6.3@arr') {
+        transitive = true
+    }
+    compile 'com.mikepenz:fastadapter-extensions:2.6.3@aar'
+    //https://github.com/JakeWharton/butterknife
+    compile 'com.jakewharton:butterknife:8.7.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
+
+    //firebase notification
+    compile 'com.google.firebase:firebase-messaging:11.6.0'
+    compile 'com.google.firebase:firebase-core:11.6.0'
+    compile 'com.google.firebase:firebase-auth:11.6.0'
+    compile 'com.google.android.gms:play-services-auth:11.6.0'
+
+    //persistens search library
+    compile 'com.quinny898.library.persistentsearch:library:1.1.0-SNAPSHOT'
+
+    //compilr for large size image
+    compile 'com.davemorrissey.labs:subsampling-scale-image-view:3.9.0'
+
     testCompile 'junit:junit:4.12'
 }
+
+//google sign in and notification firebase
+apply plugin: 'com.google.gms.google-services'
+
 
 
 

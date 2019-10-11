@@ -1,7 +1,5 @@
-package com.example.jemmycalak.thisismymarket.Notification_firebase;
+package com.jemmy.calak.camart.Notification_firebase;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;

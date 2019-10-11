@@ -1,6 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="2dp">
+
+    <!--Slide down/up animation-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DEDE"
+        android:padding="2dp">
+
+        <TextView
+            android:id="@+id/showMore"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:text="No. Pesanan : 75632JHDKH23443" />
+    </RelativeLayout>
+    <!--Slide down/up animation-->
+
+    <LinearLayout
+        android:id="@+id/dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/id_ordertxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No.Order : "
+                    android:textColor="@color/blackColor" />
+
+                <TextView
+                    android:id="@+id/id_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/id_ordertxt"
+                    android:text="109200"
+                    android:textColor="@color/blackColor" />
+
+                <TextView
+                    android:id="@+id/no_invoicetxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/id_order"
+                    android:text="No Invoice : "
+                    android:textColor="@color/blackColor" />
+
+                <TextView
+                    android:id="@+id/no_invoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/id_order"
+                    android:layout_toRightOf="@id/no_invoicetxt"
+                    android:text="902349023ASDASD4"
+                    android:textColor="@color/blackColor" />
+
+                <TextView
+                    android:id="@+id/tgl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/no_invoice"
+                    android:gravity="right"
+                    android:text="15-10-2017"
+                    android:textColor="@color/blackColor" />
+
+                <TextView
+                    android:id="@+id/status_psntxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/id_order"
+                    android:layout_toLeftOf="@+id/status_psn"
+                    android:text="Status : "
+                    android:textColor="@color/blackColor" />
+
+                <TextView
+                    android:id="@+id/status_psn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/id_order"
+                    android:text="Terkirim"
+                    android:textColor="@color/blackColor" />
+
+                <TextView
+                    android:id="@+id/txt_penerima"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/status_psn"
+                    android:text="Penerima : "
+                    android:textColor="@color/blackColor" />
+
+                <TextView
+                    android:id="@+id/nm_penerima"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/status_psn"
+                    android:layout_toRightOf="@+id/txt_penerima"
+                    android:text="Jemmy Calak"
+                    android:textColor="@color/blackColor" />
+
+                <TextView
+                    android:id="@+id/txt_alamat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_penerima"
+                    android:text="Alamat :"
+                    android:textColor="@color/blackColor" />
+
+                <TextView
+                    android:id="@+id/almt_penerima"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_penerima"
+                    android:layout_toRightOf="@+id/txt_alamat"
+                    android:text="Jl.Paku Payung, Pamulang, Tangerang Selatan"
+                    android:textColor="@color/blackColor" />
+
+                <TextView
+                    android:id="@+id/txt_notelp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_alamat"
+                    android:text="No.Telp : "
+                    android:textColor="@color/blackColor" />
+
+                <TextView
+                    android:id="@+id/notelp_penerima"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_alamat"
+                    android:layout_toRightOf="@id/txt_notelp"
+                    android:text="082269219485"
+                    android:textColor="@color/blackColor" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycleView_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <RelativeLayout
+            android:id="@+id/rel3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF">
+
+            <TextView
+                android:id="@+id/biayakirimtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/biayakirim"
+                android:text="Biaya kirim : Rp. "
+                android:textColor="@color/blackColor"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/biayakirim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="70000"
+                android:textColor="@color/blackColor"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/totaltxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/biayakirimtxt"
+                android:layout_toLeftOf="@+id/total"
+                android:text="Total : Rp. "
+                android:textColor="@color/blackColor"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/biayakirimtxt"
+                android:text="9000000-"
+                android:textColor="@color/blackColor"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/layoutBatal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:background="@color/colorPrimary">
+
+                <Button
+                    android:id="@+id/bt_order"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="1dp"
+                    android:background="@color/whiteColor"
+                    android:gravity="center"
+                    android:text="BATALKAN PESANAN"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:layout_widthPercent="50%" />
+                <Button
+                    android:id="@+id/bt_upload"
+                    android:layout_toRightOf="@+id/bt_order"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="UPLOAD PEMBAYARAN"
+                    android:textColor="@color/whiteColor"
+                    app:layout_widthPercent="50%" />
+            </android.support.percent.PercentRelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.Model;
+package com.jemmy.calak.camart.Model;
 
 
 /**

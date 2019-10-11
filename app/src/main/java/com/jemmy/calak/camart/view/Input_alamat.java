@@ -1,21 +1,18 @@
-package com.example.jemmycalak.thisismymarket.view;
+package com.jemmy.calak.camart.view;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.example.jemmycalak.thisismymarket.Config;
-import com.example.jemmycalak.thisismymarket.R;
-import com.example.jemmycalak.thisismymarket.util.userSharedPreference;
-import com.example.jemmycalak.thisismymarket.util.API;
+import com.jemmy.calak.camart.Config;
+import com.jemmy.calak.camart.R;
+import com.jemmy.calak.camart.util.userSharedPreference;
+import com.jemmy.calak.camart.util.API;
 
-import java.io.InputStream;
 import java.util.HashMap;
 
 public class Input_alamat extends AppCompatActivity implements View.OnClickListener {

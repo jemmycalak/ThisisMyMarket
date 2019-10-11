@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.Adapter;
+package com.jemmy.calak.camart.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.jemmycalak.thisismymarket.Model.object_product;
-import com.example.jemmycalak.thisismymarket.R;
-import com.example.jemmycalak.thisismymarket.util.formatNominal;
+import com.jemmy.calak.camart.Model.object_product;
+import com.jemmy.calak.camart.R;
+import com.jemmy.calak.camart.util.formatNominal;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

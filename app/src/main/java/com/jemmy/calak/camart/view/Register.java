@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.view;
+package com.jemmy.calak.camart.view;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -7,27 +7,22 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.InputFilter;
-import android.text.Spanned;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.example.jemmycalak.thisismymarket.Config;
-import com.example.jemmycalak.thisismymarket.MainActivity;
-import com.example.jemmycalak.thisismymarket.R;
-import com.example.jemmycalak.thisismymarket.util.userSharedPreference;
-import com.example.jemmycalak.thisismymarket.util.VolleySingleton;
+import com.jemmy.calak.camart.Config;
+import com.jemmy.calak.camart.MainActivity;
+import com.jemmy.calak.camart.R;
+import com.jemmy.calak.camart.util.userSharedPreference;
+import com.jemmy.calak.camart.util.VolleySingleton;
 import com.google.android.gms.common.SignInButton;
 import com.google.firebase.iid.FirebaseInstanceId;
 
@@ -36,8 +31,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Pattern;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 

@@ -1,4 +1,4 @@
-package com.example.jemmycalak.thisismymarket.Adapter;
+package com.jemmy.calak.camart.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,12 +13,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.jemmycalak.thisismymarket.Model.object_product;
-import com.example.jemmycalak.thisismymarket.R;
-import com.example.jemmycalak.thisismymarket.util.formatNominal;
-import com.example.jemmycalak.thisismymarket.util.userSharedPreference;
-import com.example.jemmycalak.thisismymarket.util.SQLite;
-import com.example.jemmycalak.thisismymarket.view.Keranjang;
+import com.jemmy.calak.camart.Model.object_product;
+import com.jemmy.calak.camart.R;
+import com.jemmy.calak.camart.util.formatNominal;
+import com.jemmy.calak.camart.util.userSharedPreference;
+import com.jemmy.calak.camart.util.SQLite;
+import com.jemmy.calak.camart.view.Keranjang;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -39,13 +39,13 @@ public class KeranjangAdapter extends BaseAdapter {
     private userSharedPreference session;
     private SQLite db;
     private int jml_product = 0, total;
-    private String nm_product, img_product, color_product,id_product, price_product;
+    private String nm_product, img_product, color_product, id_product, price_product;
     private Activity activity;
     private Cursor cursor;
 
     public KeranjangAdapter(Activity activity, Context c, List<object_product> arrayProduct) {
         this.c = c;
-        this.activity =activity;
+        this.activity = activity;
         this.arrayProduct = arrayProduct;
         inflate = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -114,10 +114,10 @@ public class KeranjangAdapter extends BaseAdapter {
                     arrayProduct.remove(position);
                     notifyDataSetChanged();   ///untuk refressh listAdapter
                     refresh();
-                    if(arrayProduct.isEmpty()){
-                        ((Keranjang)activity).setVisibleCheckout();
-                        ((Keranjang)activity).snackbar();
-                        ((Keranjang)activity).setTotal(0);
+                    if (arrayProduct.isEmpty()) {
+                        ((Keranjang) activity).setVisibleCheckout();
+                        ((Keranjang) activity).snackbar();
+                        ((Keranjang) activity).setVisibleTotal(0);
                     }
 
                 } else {
@@ -131,10 +131,10 @@ public class KeranjangAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 int db_qty = db.getQtyData(id_user, arrayProduct.get(position).getId());
-                if(db_qty != 1){
-                    db_qty-=1;
+                if (db_qty != 1) {
+                    db_qty -= 1;
                     holder.qty.setText(String.valueOf(db_qty));
-                    if(db.updateJmlhData(id_user, arrayProduct.get(position).getId(), db_qty)){
+                    if (db.updateJmlhData(id_user, arrayProduct.get(position).getId(), db_qty)) {
                         refresh();
                     }
                 }
@@ -147,7 +147,7 @@ public class KeranjangAdapter extends BaseAdapter {
             public void onClick(View v) {
                 int db_qty = db.getQtyData(id_user, arrayProduct.get(position).getId()) + 1;
                 holder.qty.setText(String.valueOf(db_qty));
-                if(db.updateJmlhData(id_user, arrayProduct.get(position).getId(),  db_qty)){
+                if (db.updateJmlhData(id_user, arrayProduct.get(position).getId(), db_qty)) {
                     refresh();
                 }
             }
@@ -157,17 +157,17 @@ public class KeranjangAdapter extends BaseAdapter {
     }
 
     private void refresh() {
-        try{
+        try {
             List<object_product> object = db.getAllDataCartById(id_user);
-            for(object_product ob1 : object){
+            for (object_product ob1 : object) {
                 total += Integer.valueOf(ob1.getJmlh()) * Integer.valueOf(ob1.getHrg());
             }
 
             //to refresh total belanja
-            ((Keranjang)activity).updateTotal(total);
+            ((Keranjang) activity).updateTotal(total);
             total = 0;
-        }catch(Exception e){
-            Log.d("Error refresh",""+e);
+        } catch (Exception e) {
+            Log.d("Error refresh", "" + e);
         }
     }
 
